@@ -50,7 +50,6 @@ export default function LoginPage() {
                         />
                     </Card>
                 </div>
-
                 <div className="form-container" >
                     <Form onSubmit={onLogin}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -103,9 +102,7 @@ export default function LoginPage() {
                                 <p className="or">OR</p>
                                 <hr />
                             </div>
-
                             <GoogleAuthBtnComp></GoogleAuthBtnComp>
-
                         </Form.Group>
                     </Form>
 
