@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
   
    <Container>
-    Home
+    Home Page
    </Container>
      
    
