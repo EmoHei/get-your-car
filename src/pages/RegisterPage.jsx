@@ -158,11 +158,11 @@ export default function SignUp() {
                             </div>
 
                             <FloatingLabel className="forgot-password-container">
-                                <span>Already have an account? <span><Link style={{ color: 'red', textDecoration: 'none' }} to='/sign-in' > Login</Link></span> </span>
+                                <span>Already have an account? <span><Link style={{ color: 'red', textDecoration: 'none' }} to='/login' > Login</Link></span> </span>
 
                             </FloatingLabel>
                             <Button variant="primary" type="submit" className="submit-btn">
-                                Submit
+                               Register
                             </Button>
                             <div className="or-container">
                                 <hr />

@@ -30,7 +30,10 @@ export default function HeaderComp() {
         <>
             <Navbar  bg="light" expand="sm" className='div-container'>
                 <Container fluid className='nav-container'>
-                    <Navbar.Brand >Get Your Car</Navbar.Brand>
+                    <Navbar.Brand className='logo' >
+                        <span className='get'>Get</span>
+                        <span className='your'>Your</span>
+                        <span className='car'>Car</span>  </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
