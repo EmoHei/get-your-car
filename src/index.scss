@@ -1,15 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chakra+Petch:ital,wght@0,300;1,300&family=Inter:wght@300;400;500;600&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 body {
   margin: 0; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Saira Condensed', sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  // font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  //   monospace;
+  font-family: 'Saira Condensed', sans-serif;
 }
 html::-webkit-scrollbar{
   display: none

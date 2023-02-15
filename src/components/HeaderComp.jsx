@@ -42,14 +42,14 @@ export default function HeaderComp() {
                             navbarScroll
                         >
 
-                            <li > <NavLink to='/' >Home</NavLink> </li>
-                            <li > <NavLink to='/offers' >Offers</NavLink> </li>
+                            <li > <NavLink to='/' >HOME</NavLink> </li>
+                            <li > <NavLink to='/offers' >OFFERS</NavLink> </li>
                             {/* Guest */}
-                            {!isLogged && <li ><NavLink to='/login' >Login</NavLink> </li>}
-                            {!isLogged && <li ><NavLink to='/register' >Register</NavLink> </li>}
+                            {!isLogged && <li ><NavLink to='/login' >LOGIN</NavLink> </li>}
+                            {!isLogged && <li ><NavLink to='/register' >REGISTER</NavLink> </li>}
                             {/* Logged User */}
-                            {isLogged && <li ><NavLink to='/profile' >Profile</NavLink> </li>}
-                            {isLogged && <li ><NavLink to='/create' >Create</NavLink> </li>}
+                            {isLogged && <li ><NavLink to='/profile' >PROFILE</NavLink> </li>}
+                            {isLogged && <li ><NavLink to='/create' >CREATE</NavLink> </li>}
                             {isLogged && <li ><NavLink to='/logout' onClick={onLogout} > Logout</NavLink> </li>}
 
                         </Nav>
