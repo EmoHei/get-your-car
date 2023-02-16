@@ -172,7 +172,7 @@ function CreatePage() {
                 <Row>
                     <Form.Group controlId="formFile" className="mb-3">
                         <h6 style={{ marginTop: '30px' }} >
-                            Select Images  <span style={{fontWeight:300}}>( The first image will be the cover (max. 6 images) )</span> 
+                            Select Images  <p style={{fontWeight:300}}>( The first image will be the cover (max. 6 images) )</p> 
                         </h6>
                         <Form.Control type="file" />
                     </Form.Group>
