@@ -1,11 +1,12 @@
 import React from 'react';
+import { ToastContainer, } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.scss';
 import HeaderComp from './components/HeaderComp';
 import PrivateRoute from './components/PrivateRoute';
 import CreatePage from './pages/CreatePage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
-
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage'
 import NotFound from './pages/NotFound';
@@ -38,6 +39,20 @@ function App() {
         </Routes>
 
       </Router>
+
+      {/* Notification */}
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 }
