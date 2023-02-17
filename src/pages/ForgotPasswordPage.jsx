@@ -67,8 +67,8 @@ export default function ForgotPasswordPage() {
                             </FloatingLabel>
 
                             <FloatingLabel className="forgot-password-container">
-                                <span>Don't have an account?<span><Link style={{ color: 'red', textDecoration: 'none' }} to='/sign-in' > Register</Link></span> </span>
-                                <span> <Link style={{ color: 'blue', textDecoration: 'none' }} to='/sign-in' >Sign in instead</Link></span>
+                                <span>Don't have an account?<span><Link style={{ color: 'red', textDecoration: 'none' }} to='/register' > Register</Link></span> </span>
+                                <span> <Link style={{ color: 'blue', textDecoration: 'none' }} to='/login' >Sign in instead</Link></span>
                             </FloatingLabel>
                         </Form.Group>
                         <Button variant="primary" type="submit" className="submit-btn">
