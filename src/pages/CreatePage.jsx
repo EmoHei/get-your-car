@@ -14,6 +14,7 @@ function CreatePage() {
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         type: "rent",
+        offer:true,
         brand: '',
         model: '',
         category: '',
@@ -28,6 +29,7 @@ function CreatePage() {
     })
     const {
         type,
+        offer,
         brand,
         model,
         category,
@@ -369,13 +371,13 @@ function CreatePage() {
                     </Col>
                 </Row>
                 <Row>
-                    <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Group id="formFile" className="mb-3">
                         <h6 style={{ marginTop: '30px' }} >
                             Select Images  <p style={{ fontWeight: 300 }}>( The first image will be the cover (max. 6 images) )</p>
                         </h6>
                         <Form.Control
                             type="file"
-                            controlId="images"
+                            id="images"
                             onChange={onChange}
                             accept=".jpg,.png,.jpeg"
                             multiple

@@ -63,7 +63,7 @@ export default function SignUp() {
             <h1 className="title">Register</h1>
 
             <div className="main-container" >
-                {/*className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6"  */}
+              
                 <div className="image-container" >
                     <Card className=" text-white">
                         <Card.Img className="image-container-image" src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2V5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
@@ -72,19 +72,19 @@ export default function SignUp() {
                     </Card>
 
                 </div>
-                {/* className="w-full md:w-[67%] lg:w-[40%] lg:ml-20" */}
+
                 <div className="form-container" >
                     <Form onSubmit={onRegister}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" id="formBasicEmail">
                             <FloatingLabel
-                              
+
                                 label="Full Name"
                                 className="mb-3"
                             >
                                 <Form.Control
                                     type="text"
                                     placeholder="John Doe"
-                                  id="name"
+                                    id="name"
                                     className="form-input"
                                     value={name}
                                     onChange={onChange}
@@ -94,7 +94,7 @@ export default function SignUp() {
 
                             </div>
                             <FloatingLabel
-                            
+
                                 label="Email address"
                                 className="mb-3"
                             >
@@ -112,7 +112,7 @@ export default function SignUp() {
 
                             <div className="password-container">
                                 <FloatingLabel
-                                  
+
                                     label="Password"
                                 >
                                     <Form.Control
@@ -135,7 +135,7 @@ export default function SignUp() {
                             </div>
                             <div className="password-container">
                                 <FloatingLabel
-                                   
+
                                     label=" Confirm Password"
                                 >
                                     <Form.Control
@@ -162,7 +162,7 @@ export default function SignUp() {
 
                             </FloatingLabel>
                             <Button variant="primary" type="submit" className="submit-btn">
-                               Register
+                                Register
                             </Button>
                             <div className="or-container">
                                 <hr />

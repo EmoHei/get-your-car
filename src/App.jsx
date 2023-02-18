@@ -11,6 +11,8 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage'
 import NotFound from './pages/NotFound';
 import RegisterPage from './pages/RegisterPage'
+import Profile from './pages/Profile';
+import Offers from './pages/Offers';
 function App() {
   return (
     <>
@@ -20,6 +22,14 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage></HomePage>} />
+
+          <Route path='/' element={<PrivateRoute />}>
+            <Route path="/offers" element={<Offers></Offers>} />
+          </Route>
+
+          <Route path='/profile' element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
 
           <Route path="/login" element={<LoginPage></LoginPage>} />
           <Route path="/register" element={<RegisterPage></RegisterPage>} />

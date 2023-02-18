@@ -49,16 +49,16 @@ export default function ForgotPasswordPage() {
                 </div>
                 <div className="form-container" >
                     <Form onSubmit={onForgotPassword}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" id="formBasicEmail">
                             <FloatingLabel
-                                controlId="floatingInput"
+                               id="floatingInput"
                                 label="Email address"
                                 className="mb-3"
                             >
                                 <Form.Control
                                     type="email"
                                     placeholder="name@example.com"
-                                    controlId="email"
+                                    id="email"
                                     className="form-input"
                                     value={email}
                                     required
