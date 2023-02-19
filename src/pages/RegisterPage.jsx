@@ -106,7 +106,6 @@ export default function SignUp() {
                                     value={email}
 
                                     onChange={onChange}
-
                                 />
                             </FloatingLabel>
 

@@ -93,7 +93,7 @@ export default function Profile() {
                 (listing) => listing.id !== listingID
             );
             setListings(updatedListings);
-            toast.success("Successfully deleted the listing");
+            toast.success("Successfully deleted");
         }
     }
     // Edit

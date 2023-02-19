@@ -13,6 +13,9 @@ import NotFound from './pages/NotFound';
 import RegisterPage from './pages/RegisterPage'
 import Profile from './pages/Profile';
 import Offers from './pages/Offers';
+import Category from './pages/Category';
+import Listing from './pages/Listing';
+import Edit from './pages/Edit'
 function App() {
   return (
     <>
@@ -26,6 +29,20 @@ function App() {
           <Route path='/' element={<PrivateRoute />}>
             <Route path="/offers" element={<Offers></Offers>} />
           </Route>
+          <Route path='/category/:categoryName' element={<PrivateRoute />}>
+            <Route path="/category/:categoryName" element={<Category></Category>} />
+          </Route>
+          <Route path='/category/:categoryName/:listingId' element={<PrivateRoute />}>
+            <Route path="/category/:categoryName/:listingId" element={<Listing></Listing>} />
+          </Route>
+          <Route path="edit" element={<PrivateRoute />}>
+            <Route path="/edit/:listingId" element={<Edit />} />
+          </Route>
+          <Route path="edit-listing" element={<PrivateRoute />}>
+            <Route path="/edit-listing/:listingId" element={<Edit />} />
+          </Route>
+
+          <Route path="/update/:id" element={<Edit />} />
 
           <Route path='/profile' element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />

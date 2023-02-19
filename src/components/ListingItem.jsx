@@ -35,17 +35,17 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
                         </p>
                     </div>
                     <p className="card-title">{listing.brand}</p>
-                    {/* <p style={{ color: '#457b9d', fontWeight: '500' }}>
+                    <p style={{ color: '#457b9d', fontWeight: '500' }}>
                         $
                         {listing.offer
                             ? listing.price
                                 .toString()
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-                            : listing.regularPrice
+                            : listing.price
                                 .toString()
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         {listing.type === "rent" && " / Month"}
-                    </p> */}
+                    </p>
                     <div style={{ display: 'flex' }}>
                         <div >
                             <p style={{ marginRight: '15px', color: '#29526b', fontWeight: '500' }}>
