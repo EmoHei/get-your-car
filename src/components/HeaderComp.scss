@@ -8,27 +8,10 @@
   min-width: 100%;
   min-height: 100px;
   // font-family: 'Chakra Petch', sans-serif;
-font-family: 'Saira Condensed', sans-serif;
-letter-spacing: 3px;
-  .get {
-    background-color: rgb(70, 68, 68);
-    color: white;
-    padding: 5px 10px;
-    border-bottom-left-radius: 6px;
-    border-top-left-radius: 6px;
+  font-family: "Saira Condensed", sans-serif;
+  letter-spacing: 3px;
+  
   }
-  .your {
-    background-color: red;
-    padding: 5px 10px;
-  }
-  .car {
-    background-color: rgb(70, 68, 68);
-    color: white;
-    padding: 5px 10px;
-    border-bottom-right-radius: 6px;
-    border-top-right-radius: 6px;
-  }
-
   .navbar-toggler {
     max-width: fit-content;
     margin-bottom: 0px;
@@ -40,30 +23,55 @@ letter-spacing: 3px;
   .logo {
     font-size: 30px;
   }
+.get {
+  background-color: rgb(70, 68, 68);
+  color: white;
+  padding: 5px 10px;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.your {
+  background-color: red;
+  padding: 5px 10px;
+}
+.car {
+  background-color: rgb(70, 68, 68);
+  color: white;
+  padding: 5px 10px;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+a {
+  margin: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  color: gray;
+  cursor: pointer;
+  text-decoration: none;
+}
+ a.active {
+    font-size: 25px;
+    font-weight: 500;
+    border-bottom: none;
+    color: rgb(86, 85, 85);
+  }
 
+@media only screen and (max-width: 930px) {
+  .navigation {
+    background-color: black;
+  }
   a {
     margin: 30px;
-    font-size: 25px;
-    font-weight: 200;
-    color: gray;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(90, 87, 87);
     cursor: pointer;
     text-decoration: none;
   }
   a.active {
-    padding: 5px;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 25px;
-    font-weight: 600;
-    border-bottom: 3px solid red;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: none;
     color: rgb(86, 85, 85);
   }
-  @media only screen and (max-width: 576px) {
-
-    
-    a.active{
-       border-bottom: none;
-    } 
-  }
- 
 }

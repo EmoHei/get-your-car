@@ -27,37 +27,46 @@ export default function HeaderComp() {
         auth.signOut();
     }
     return (
-        <>
-            <Navbar bg="light" expand="sm" className='div-container'>
-                <Container fluid className='nav-container'>
-                    <Navbar.Brand className='logo' >
-                        <span className='get'>Get</span>
-                        <span className='your'>Your</span>
-                        <span className='car'>Car</span>  </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll">
-                        <Nav
-                            className="me-auto my-2 my-lg-0"
-                            style={{ maxHeight: '200px' }}
-                            navbarScroll
-                        >
-
-                            <li > <NavLink to='/' >HOME</NavLink> </li>
-                            <li > <NavLink to='/offers' >OFFERS</NavLink> </li>
-                            {/* Guest */}
-                            {!isLogged && <li ><NavLink to='/login' >LOGIN</NavLink> </li>}
-                            {!isLogged && <li ><NavLink to='/register' >REGISTER</NavLink> </li>}
-                            {/* Logged User */}
-                            {isLogged && <li ><NavLink to='/profile' >PROFILE</NavLink> </li>}
-                            {isLogged && <li ><NavLink to='/create' >CREATE</NavLink> </li>}
-                            {isLogged && <li ><NavLink to='/logout' onClick={onLogout} > Logout</NavLink> </li>}
-
-                        </Nav>
-
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-
-        </>
+        
+        <Navbar bg="light" expand="lg" className='div-container'>
+            <Container fluid>
+                <Navbar.Brand className='logo' >
+                    <span className='get'>Get</span>
+                    <span className='your'>Your</span>
+                    <span className='car'>Car</span>  </Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+               
+                <Navbar.Collapse id="navbarScroll">
+                   
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                        <li > <NavLink to='/' >HOME</NavLink> </li>
+                                     <li > <NavLink to='/offers' >OFFERS</NavLink> </li>
+                                     {/* Guest */}
+                                      {!isLogged && <li ><NavLink to='/login' >LOGIN</NavLink> </li>}
+                                     {!isLogged && <li ><NavLink to='/register' >REGISTER</NavLink> </li>}
+                                     {/* Logged User */}
+                                     {isLogged && <li ><NavLink to='/profile' >PROFILE</NavLink> </li>}
+                                     {isLogged && <li ><NavLink to='/create' >CREATE</NavLink> </li>}
+                                     {isLogged && <li ><NavLink to='/logout' onClick={onLogout} > Logout</NavLink> </li>}
+                    </Nav>
+                    <Form className="d-flex" style={{display:'flex',justifyContent:'flexEnd'}}>
+                        <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                            style={{width:'40%'}}
+                        />
+                        <Button variant="outline-success" style={{width: 'fit-content',margin:'0px' }}>Search</Button>
+                    </Form>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+       
+       
     )
 }
