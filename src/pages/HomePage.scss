@@ -6,3 +6,11 @@
 .sub-title {
   text-align: center;
 }
+@media only screen and (max-width: 400px) {
+  .container{
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

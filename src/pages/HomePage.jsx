@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import ListingItem from "../components/ListingItem";
 import Slider from "../components/Slider";
 import { db } from "../firebase";
+import { Container } from 'react-bootstrap';
 
 export default function Home() {
   // Offers
@@ -113,10 +114,10 @@ export default function Home() {
     fetchListings();
   }, []);
   return (
-    <div>
+    <Container className='container'>
     
       <Slider />
-      <div>
+      
         {offerListings && offerListings.length > 0 && (
           <div>
 
@@ -177,8 +178,8 @@ export default function Home() {
             </ul>
           </div>
         )}
-      </div>
-    </div>
+      
+    </Container>
   );
 
 }  
