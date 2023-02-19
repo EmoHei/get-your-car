@@ -28,7 +28,7 @@ export default function HeaderComp() {
     }
     return (
         <>
-            <Navbar  bg="light" expand="sm" className='div-container'>
+            <Navbar bg="light" expand="sm" className='div-container'>
                 <Container fluid className='nav-container'>
                     <Navbar.Brand className='logo' >
                         <span className='get'>Get</span>
@@ -53,7 +53,7 @@ export default function HeaderComp() {
                             {isLogged && <li ><NavLink to='/logout' onClick={onLogout} > Logout</NavLink> </li>}
 
                         </Nav>
-                        
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

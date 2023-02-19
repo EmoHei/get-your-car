@@ -25,10 +25,9 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage></HomePage>} />
-
-          <Route path='/' element={<PrivateRoute />}>
-            <Route path="/offers" element={<Offers></Offers>} />
-          </Route>
+        
+ <Route path="/offers" element={<Offers></Offers>} />
+          
           <Route path='/category/:categoryName' element={<PrivateRoute />}>
             <Route path="/category/:categoryName" element={<Category></Category>} />
           </Route>

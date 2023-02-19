@@ -107,7 +107,7 @@ export default function Listing() {
                 <p className='card-address'><FaMapMarkerAlt style={{ color: 'green' }} />{listing.address}</p>
                 <div style={{ display: 'flex' }}>
                     <p className='rent-sale-btn'>
-                        {listing.type === 'rent' ? "Rent" : "Sale"}
+                        {listing.type === 'rent' ? "Rent" : "Sell"}
                     </p>
                     {/* {listing.offer && (
                         <p className='offer-btn'>$ {(Number(listing.regularPrice) - Number(listing.discountedPrice)).toString()

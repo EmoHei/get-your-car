@@ -79,7 +79,7 @@ export default function Category() {
     return (
         <div className="">
             <h1 style={{ textAlign: 'center', margin: '30px' }}>
-                {params.categoryName === "rent" ? "Cars for rent" : "Cars for sale"}</h1>
+                {params.categoryName === "rent" ? "Cars for rent" : "Cars for sell"}</h1>
             {loading ? (
                 <SpinnerComp />
             ) : listings && listings.length > 0 ? (

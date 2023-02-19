@@ -33,7 +33,7 @@ export default function Home() {
         );
        // execute the query
         const querySnap = await getDocs(q);
-        console.log('>>>>>>>' + querySnap)
+    
         const listings = [];
         querySnap.forEach((doc) => {
           return listings.push({
@@ -81,7 +81,7 @@ export default function Home() {
     }
     fetchListings();
   }, []);
-  // Cars for rent
+  // Cars for sell
   const [saleListings, setSaleListings] = useState(null);
   useEffect(() => {
     async function fetchListings() {
@@ -91,7 +91,7 @@ export default function Home() {
         // create the query
         const q = query(
           listingsRef,
-          where("type", "==", "sale"),
+          where("type", "==", "sell"),
           orderBy("timestamp", "desc"),
           limit(4)
         );
