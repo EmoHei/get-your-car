@@ -127,7 +127,7 @@ export default function Home() {
                 Show more offers
               </p>
             </Link>
-            <ul style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+            <ul className='ul-more-offers' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
               {offerListings.map((listing) => (
                 <ListingItem
                   key={listing.id}
