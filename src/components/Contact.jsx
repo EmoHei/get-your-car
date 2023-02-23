@@ -7,29 +7,29 @@ import { db } from "../firebase";
 import { Button, Form } from "react-bootstrap";
 
 export default function Contact({ userRef, listing }) {
-    const [landlord, setLandlord] = useState(null);
+    const [carOwner, setCarOwner] = useState(null);
     const [message, setMessage] = useState("");
     useEffect(() => {
-        async function getLandlord() {
+        async function getCarOwner() {
             const docRef = doc(db, "users", userRef); // userRef is In  Listing component <Contact>
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                setLandlord(docSnap.data());
+                setCarOwner(docSnap.data());
             } else {
-                toast.error("Could not get landlord data");
+                toast.error("Could not get car owner data");
             }
         }
-        getLandlord();
+        getCarOwner();
     }, [userRef]);
     function onChange(e) {
         setMessage(e.target.value);
     }
     return (
         <>
-            {landlord !== null && (
+            {carOwner !== null && (
                 <div className="flex flex-col w-full">
                     <p>
-                        Contact {landlord.name} for the {listing.brand.toLowerCase()}
+                        Contact {carOwner.name} for the {listing.brand.toLowerCase()}
                     </p>
                     <div className="">
                         <Form.Control
@@ -44,7 +44,7 @@ export default function Contact({ userRef, listing }) {
                         ></Form.Control>
                     </div>
                     <a
-                        href={`mailto:${landlord.email}?Subject=${listing.brand}&body=${message}`}
+                        href={`mailto:${carOwner.email}?Subject=${listing.brand}&body=${message}`}
                     >
                         <Button
                             type="button"

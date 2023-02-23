@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Listing.scss"
 import { db } from "../firebase";
 import Carousel from 'react-bootstrap/Carousel';
-import { FaShare,FaMapMarkerAlt,} from "react-icons/fa";
+import { FaShare, FaMapMarkerAlt, } from "react-icons/fa";
 import { getAuth } from "firebase/auth";
 import { useParams } from 'react-router';
 import { doc, getDoc } from 'firebase/firestore';
@@ -19,7 +19,7 @@ export default function Listing() {
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(true);
     const [shareLinkCopied, setShareLinkCopied] = useState(false);
-    const [contactLandlord, setContactLandlord] = useState(false);
+    const [contactCarOwner, setCarOwner] = useState(false);
     // For Slider
     const [index, setIndex] = useState(0);
     const handleSelect = (selectedIndex, e) => {
@@ -77,7 +77,6 @@ export default function Listing() {
                         backgroundSize: 'cover'
                     }} />
             }
-
             <div
                 className='share-icon-container'
                 onClick={() => {
@@ -109,62 +108,30 @@ export default function Listing() {
                     <p className='rent-sale-btn'>
                         {listing.type === 'rent' ? "Rent" : "Sell"}
                     </p>
-                    {/* {listing.offer && (
-                        <p className='offer-btn'>$ {(Number(listing.regularPrice) - Number(listing.discountedPrice)).toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} discount</p>
-                    )} */}
-
                 </div>
                 <p style={{ fontSize: '26px', fontWeight: 'bold' }}>
                     Description - <span style={{ fontWeight: '500', fontSize: '20px', color: 'gray' }}>{listing.description}</span>
                 </p>
-                {/* <ul style={{ display: 'flex', justifyContent: 'space-around' }}>
-                    <li style={{ display: 'flex', flexDirection: 'column' }}>
-                        {+listing.bedrooms > 1 ?
-                            `${listing.bedrooms} Beds` : " Bed"}
-                        <FaBed></FaBed>
-                    </li>
-                    <li style={{ display: 'flex', flexDirection: 'column' }}>
-                        {+listing.bathrooms > 1 ?
-                            `${listing.bathrooms} Baths` : " Bath"}
-                        <FaBath></FaBath>
-                    </li>
-                    <li style={{ display: 'flex', flexDirection: 'column' }}>
-                        {+listing.parking > 1 ?
-                            `${listing.parking} Parking spot` : " No parking"}
-                        <FaParking></FaParking>
-                    </li>
-                    <li style={{ display: 'flex', flexDirection: 'column' }}>
-                        {+listing.parking > 1 ?
-                            `${listing.parking} Furnished` : " No furnished"}
-                        <FaChair></FaChair>
-                    </li>
-                </ul> */}
-
                 {listing.userRef !== auth.currentUser.uid
-                    && !contactLandlord && (
+                    && !contactCarOwner && (
                         <div style={{
                             margin: 'auto',
                             marginTop: '50px',
                             maxWidth: '300px'
-
                         }}>
                             <Button
-                                onClick={() => setContactLandlord(true)}
-                            > Contact Landlord</Button>
+                                onClick={() => setCarOwner(true)}
+                            > Contact Owner</Button>
                         </div>
                     )
                 }
-                {contactLandlord && (
+                {contactCarOwner && (
                     <Contact
                         userRef={listing.userRef}
                         listing={listing}
                     ></Contact>
                 )}
-
             </Card>
-
         </Container>
-
     );
 }

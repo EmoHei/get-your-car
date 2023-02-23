@@ -146,8 +146,8 @@ export default function Home() {
                 Show more Cars for rent
               </p>
             </Link>
-            <ul className=""
-              style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}
+            <ul className="ul-listings"
+              style={{ display: 'flex', flexWrap: 'wrap' }}
             >
               {rentListings.map((listing) => (
                 <ListingItem
@@ -161,13 +161,13 @@ export default function Home() {
         )}
         {saleListings && saleListings.length > 0 && (
           <div className="m-2 mb-6">
-            <h2 className='title-offer-sale-rent'>Cars for sale</h2>
+            <h2 className='title-offer-sale-rent'>Cars for sell</h2>
             <Link to="/category/sale">
               <p className='sub-title'>
-                Show more Cars for sale
+                Show more Cars for sell
               </p>
             </Link>
-            <ul style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+            <ul style={{ display: 'flex',flexDirection:'column', justifyContent: 'space-around', flexWrap: 'wrap' }}>
               {saleListings.map((listing) => (
                 <ListingItem
                   key={listing.id}

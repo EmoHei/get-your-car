@@ -6,11 +6,14 @@
 .sub-title {
   text-align: center;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 540px) {
   .container{
     margin: auto;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
+  }
+  .ul-listings{
+    flex-direction:column ;
   }
 }
