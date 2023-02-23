@@ -127,7 +127,7 @@ export default function Home() {
                 Show more offers
               </p>
             </Link>
-            <ul className='ul-more-offers' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+          <ul className="ul-listings" style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
               {offerListings.map((listing) => (
                 <ListingItem
                   key={listing.id}
@@ -167,7 +167,7 @@ export default function Home() {
                 Show more Cars for sell
               </p>
             </Link>
-            <ul style={{ display: 'flex',flexDirection:'column', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+          <ul className="ul-listings" style={{ display: 'flex',flexDirection:'column', justifyContent: 'space-around', flexWrap: 'wrap' }}>
               {saleListings.map((listing) => (
                 <ListingItem
                   key={listing.id}

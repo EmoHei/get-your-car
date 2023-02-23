@@ -14,11 +14,10 @@
     flex-wrap: wrap;
   }
   .ul-listings{
+    width: 100%;
     flex-direction:column ;
-  }
-  .ul-more-offers{
-    flex-direction: column;
-    justify-content: center;
+     justify-content: center;
     align-items: center;
   }
+  
 }
