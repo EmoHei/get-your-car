@@ -53,7 +53,7 @@ export default function SignUp() {
             navigate('/');
         } catch (error) {
             // Alert Notification Message
-            toast.error("Something went wrong with registration")
+            toast.error("Something went wrong! Password must be at least 6 characters")
             console.log(error);
         }
     }
