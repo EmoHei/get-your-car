@@ -20,7 +20,7 @@
 }
 
 .card {
-  background-color: white;
+  // background-color: white;
   border: none;
   box-shadow: 5px 5px 15px 5px #e2e1e1;
   cursor: default;
@@ -38,17 +38,17 @@
 img {
   width: 250px;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;
   padding: 0;
   margin: auto;
 
 }
-img:hover {
-  cursor: pointer;
-  scale: 1.5;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.8s;
-}
+// img:hover {
+//   cursor: pointer;
+//   scale: 1.5;
+//   transition-timing-function: ease-in-out;
+//   transition-duration: 0.8s;
+// }
 a {
   text-decoration: none;
 }

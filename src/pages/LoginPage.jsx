@@ -1,20 +1,21 @@
 import React from "react";
 import { useState } from "react";
-import { Link, } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Card from 'react-bootstrap/Card';
-import GoogleAuthBtnComp from '../../src/components/GoogleAuthBtnComp';
-import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Card from "react-bootstrap/Card";
+import GoogleAuthBtnComp from "../../src/components/GoogleAuthBtnComp";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import './LoginComp.scss';
+import "./LoginComp.scss";
+import lock from "../assets/padlock.png";
 
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
-    const [formData, setFormData] = useState({ email: '', password: '', });
+    const [formData, setFormData] = useState({ email: "", password: "" });
     const { email, password } = formData;
     const navigate = useNavigate();
 
@@ -22,19 +23,23 @@ export default function LoginPage() {
         setFormData((prevState) => ({
             ...prevState,
             [e.target.id]: e.target.value,
-        }))
+        }));
     }
     async function onLogin(e) {
         e.preventDefault();
         try {
             const auth = getAuth();
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
             if (userCredential.user) {
-                toast.success('Your Login Was Successful')
-                navigate('/')
+                toast.success("Your Login Was Successful");
+                navigate("/");
             }
         } catch (error) {
-            toast.error('Bad user credentials!')
+            toast.error("Bad user credentials!");
         }
     }
     return (
@@ -43,11 +48,10 @@ export default function LoginPage() {
 
             <div className="main-container" >
 
-                <div className="image-container" >
-                    <Card className=" text-white">
-                        <Card.Img className="image-container-image" src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2V5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                            alt="key"
-                        />
+                <div className="image-container"  >
+                    <Card className="text-white" style={{ background: 'gray', border: 'none',width:"50%" }}>
+                        <Card.Img className="image-container-image" src={lock} alt="lock"
+                            style={{  padding:"10px"}}/>
                     </Card>
                 </div>
                 <div className="form-container" >
@@ -91,7 +95,7 @@ export default function LoginPage() {
 
                             <div className="forgot-password-container">
                                 <p>Don't have an account? <span><Link style={{ color: 'red', textDecoration: 'none' }} to='/register' >Register</Link></span></p>
-                                <Link style={{ color: 'blue', textDecoration: 'none' }} to='/forgot-password' >Forgot password ?</Link>
+                                <Link className="login-a" to='/forgot-password' >Forgot password?</Link>
                             </div>
 
                             <Button variant="primary" type="submit" className="submit-btn">
@@ -110,5 +114,8 @@ export default function LoginPage() {
 
             </div>
         </section>
+      
+       
+       
     );
 }

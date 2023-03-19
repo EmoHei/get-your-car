@@ -13,6 +13,7 @@ import { db } from '../firebase'
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import lock from "../assets/padlock.png";
 
 export default function SignUp() {
     const [showPassword, setShowPassword] = useState(false);
@@ -59,15 +60,11 @@ export default function SignUp() {
     }
     return (
         <section>
-
             <h1 className="title">Register</h1>
-
             <div className="main-container" >
-              
                 <div className="image-container" >
-                    <Card className=" text-white">
-                        <Card.Img className="image-container-image" src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2V5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                            alt="key"
+                    <Card className=" text-white" style={{ background: 'gray', border: 'none', width: "50%",padding:'10px' }}>
+                        <Card.Img className="image-container-image" src={lock} alt="lock"
                         />
                     </Card>
 
