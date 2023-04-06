@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Profile.scss"
+import "./Profile.scss";
 
 import { getAuth, updateProfile } from "firebase/auth";
 import {
@@ -31,6 +31,7 @@ export default function Profile() {
         name: auth.currentUser.displayName,
         email: auth.currentUser.email,
     });
+
     const { name, email } = formData;
     function onLogout() {
         auth.signOut();
@@ -52,7 +53,6 @@ export default function Profile() {
                 });
 
                 // update name in the firestore
-
                 const docRef = doc(db, "users", auth.currentUser.uid);
                 await updateDoc(docRef, {
                     name,
@@ -120,7 +120,6 @@ export default function Profile() {
                             />
                         </Form.Group>
 
-                       
                         <Form.Group className="mb-3" id="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control

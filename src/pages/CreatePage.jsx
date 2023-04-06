@@ -24,6 +24,7 @@ function CreatePage() {
         color: '',
         price: 0,
         description: '',
+        kilometer:0,
         images: {},
 
     })
@@ -39,6 +40,7 @@ function CreatePage() {
         color,
         price,
         description,
+        kilometer,
         images,
 
     } = formData;
@@ -207,6 +209,19 @@ function CreatePage() {
                             required
                             style={{ width: '100%', margin: 'auto' }}
                         />
+                    </Col>
+                    <Col>
+                        <h6 style={{ marginTop: '30px' }} >
+                            Kilometers
+                        </h6>
+                        <Form.Control
+                            type="number"
+                            placeholder='Kilometer'
+                            value={kilometer}
+                            id="kilometer"
+                            onChange={onChange}
+                            required
+                            style={{ width: '100%', margin: 'auto' }} />
                     </Col>
                 </Row>
                 <Row>

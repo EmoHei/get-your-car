@@ -1,12 +1,12 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export function useAuthStatus() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [checkingStatus, setCheckingStatus] = useState(true);
 
     useEffect(() => {
-        const auth = getAuth()
+        const auth = getAuth();
         // This is firebase method
         onAuthStateChanged(auth, (user) => {
             if (user) {

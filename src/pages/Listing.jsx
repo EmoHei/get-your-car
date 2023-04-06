@@ -77,7 +77,7 @@ export default function Listing() {
                         backgroundSize: 'cover'
                     }} />
             }
-            <div
+            {/* <div
                 className='share-icon-container'
                 onClick={() => {
                     navigator.clipboard.writeText(window.location.href)
@@ -88,7 +88,7 @@ export default function Listing() {
                 }}
             >
                 < FaShare className='share-icon'></FaShare>
-            </div>
+            </div> */}
             {shareLinkCopied && (<p className='share-text'>Link Copied</p>)}
 
             <Card className='content-container'>

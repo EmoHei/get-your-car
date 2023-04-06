@@ -28,8 +28,7 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
                 </Link>
                 <Col style={{ padding: '5px' }}>
                     <div style={{ display: 'flex' }}>
-                        <MdLocationOn style={{ marginTop: '20px', color: 'green' }}>
-                        </MdLocationOn>
+                        
                         <p className="address truncate">
                             {listing.fuel}
                         </p>

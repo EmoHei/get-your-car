@@ -27,6 +27,7 @@ function Edit() {
         color: '',
         price: 0,
         description: '',
+        kilometer:0,
         images: {},
 
     })
@@ -42,6 +43,7 @@ function Edit() {
         color,
         price,
         description,
+        kilometer,
         images,
 
     } = formData;
@@ -240,6 +242,19 @@ function Edit() {
                             required
                             style={{ width: '100%', margin: 'auto' }}
                         />
+                    </Col>
+                    <Col>
+                        <h6 style={{ marginTop: '30px' }} >
+                           Kilometer
+                        </h6>
+                        <Form.Control
+                            type="number"
+                            placeholder='Kilometer'
+                            value={kilometer}
+                            id="kilometer"
+                            onChange={onChange}
+                            required
+                            style={{ width: '100%', margin: 'auto' }} />
                     </Col>
                 </Row>
                 <Row>
