@@ -1,3 +1,18 @@
+# Get Your Car App
+ This app was build with React and Firebase using 
+ react-bootstrap,
+ react-icons and react-toastify for the notifications
+ and includes the main CRUD operations.
+ The App is deployed with Vercel and is for learning porpoises only.
+
+ - Not logged users can read data only and register, either with they google account 
+   or manually filling the register form.  
+ - Registered users have create and profile pages, 
+   where they can create new listening, update and delete they own data.
+   If user is register and logged, can also contact other creators of listenings
+   by sending them an email.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

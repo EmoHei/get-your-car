@@ -16,7 +16,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { db } from "../firebase";
-import { FcHome } from "react-icons/fc";
+import { AiFillCar } from "react-icons/ai";
 import { useEffect } from "react";
 import ListingItem from "../components/ListingItem";
 import { Form, Button, Container, FormControl } from 'react-bootstrap';
@@ -147,7 +147,7 @@ export default function Profile() {
                             type="submit"
                             className='sell-rent-btn' >
                             <Link className='rent-sell-link' to="/create">
-                                <FcHome className='home-icon' />
+                                <AiFillCar className='car-icon' />
                                 Sell or rent your car
                             </Link>
                         </Button>
