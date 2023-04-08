@@ -28,6 +28,12 @@ export default function LoginPage() {
     async function onLogin(e) {
         e.preventDefault();
         try {
+            if (email.trim() === '') {
+                return toast.error("Please enter a valid email")
+            }
+            if (password.trim() === '') {
+                return toast.error("Please enter a valid password")
+            }
             const auth = getAuth();
             const userCredential = await signInWithEmailAndPassword(
                 auth,
@@ -39,7 +45,7 @@ export default function LoginPage() {
                 navigate("/");
             }
         } catch (error) {
-            toast.error("Bad user credentials!");
+            toast.error("Wrong email or password! Please try again!");
         }
     }
     return (

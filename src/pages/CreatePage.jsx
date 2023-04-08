@@ -14,7 +14,7 @@ function CreatePage() {
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         type: "rent",
-        offer:true,
+        offer: true,
         brand: '',
         model: '',
         category: '',
@@ -24,7 +24,7 @@ function CreatePage() {
         color: '',
         price: 0,
         description: '',
-        kilometer:0,
+        kilometer: 0,
         images: {},
 
     })
@@ -81,7 +81,30 @@ function CreatePage() {
     async function onSubmit(e) {
         e.preventDefault();
         setLoading(true);
-
+        if (brand.trim() === '') {
+            toast.error("Please enter a brand name");
+            return;
+        }
+        if (model.trim() === '') {
+            toast.error("Please enter a model");
+            return;
+        }
+        if (kilometer.trim() === '') {
+            toast.error("Please enter kilometers");
+            return;
+        }
+        if (year.trim() === '') {
+            toast.error("Please enter a year");
+            return;
+        }
+        if (fuel.trim() === '') {
+            toast.error("Please enter kind of fuel");
+            return;
+        }
+        if (price < 50) {
+            toast.error("Price must be more than 50");
+            return;
+        }
         if (images.length > 6) {
             setLoading(false);
             toast.error("maximum 6 images are allowed");
@@ -221,6 +244,7 @@ function CreatePage() {
                             id="kilometer"
                             onChange={onChange}
                             required
+                            minLength="1"
                             style={{ width: '100%', margin: 'auto' }} />
                     </Col>
                 </Row>

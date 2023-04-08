@@ -77,12 +77,12 @@ export default function Category() {
         }
     }
     return (
-        <div className="">
+        <div >
             <h1 style={{ textAlign: 'center', margin: '30px' }}>
                 {params.categoryName === "rent" ? "Cars for rent" : "Cars for sell"}</h1>
             {loading ? (
                 <SpinnerComp />
-            ) : listings && listings.length > 0 ? (
+            ) : listings && listings.length > 0 ?(
                 <>
                     <ul style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
                         {listings.map((listing) => (
@@ -105,7 +105,7 @@ export default function Category() {
                     )}
                 </>
             ) : (
-                <p>There are no current cars for {params.categoryName === "rent" ? "rent" : "sale"}</p>
+                <p>There are no current cars for {params.categoryName === "rent" ? "rent" : "sell"}</p>
             )}
         </div>
     );

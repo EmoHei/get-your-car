@@ -167,7 +167,7 @@ export default function Home() {
       {saleListings && saleListings.length > 0 && (
         <div className="m-2 mb-6">
           <h2 className="title-offer-sale-rent">Cars for sell</h2>
-          <Link to="/category/sale">
+          <Link to="/category/sell">
             <p className="sub-title">Show more Cars for sell</p>
           </Link>
           <ul

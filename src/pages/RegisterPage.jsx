@@ -33,9 +33,24 @@ export default function SignUp() {
     async function onRegister(e) {
         e.preventDefault();
         try {
-            if (password !== confirmPassword) {
-                return toast.error("Password don't match")
+             if (name.trim() === '') {
+                return toast.error("Please enter a name")
             }
+            if (email.trim() === '') {
+                return toast.error("Please enter a valid email")
+            }
+            if (password.trim() ==='') {
+                return toast.error("Please enter a password")
+            }
+            if (password.length < 6) {
+                return toast.error("Password must be at least 6 characters long")
+            }
+            if (password !== confirmPassword) {
+                return toast.error("Confirm password don't match")
+            }
+            
+            
+           
             const auth = getAuth()
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             //  If for example name in formData ()

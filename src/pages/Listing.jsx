@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Listing.scss"
 import { db } from "../firebase";
 import Carousel from 'react-bootstrap/Carousel';
-import { FaShare, FaMapMarkerAlt, } from "react-icons/fa";
+// import { FaShare, FaMapMarkerAlt, } from "react-icons/fa";
 import { getAuth } from "firebase/auth";
 import { useParams } from 'react-router';
 import { doc, getDoc } from 'firebase/firestore';
@@ -18,7 +18,7 @@ export default function Listing() {
 
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [shareLinkCopied, setShareLinkCopied] = useState(false);
+    // const [shareLinkCopied, setShareLinkCopied] = useState(false);
     const [contactCarOwner, setCarOwner] = useState(false);
     // For Slider
     const [index, setIndex] = useState(0);
@@ -77,7 +77,8 @@ export default function Listing() {
                         backgroundSize: 'cover'
                     }} />
             }
-            {/* <div
+            {/* TODO  
+            <div
                 className='share-icon-container'
                 onClick={() => {
                     navigator.clipboard.writeText(window.location.href)
@@ -89,7 +90,7 @@ export default function Listing() {
             >
                 < FaShare className='share-icon'></FaShare>
             </div> */}
-            {shareLinkCopied && (<p className='share-text'>Link Copied</p>)}
+            {/* {shareLinkCopied && (<p className='share-text'>Link Copied</p>)} */}
 
             <Card className='content-container'>
                 <h1 className='card.title' style={{ color: '#173F88', fontWeight: 'bold', marginBottom: '20px' }}>
@@ -103,12 +104,18 @@ export default function Listing() {
                         {listing.type === 'rent' ? " / month" : ""}
                     </span>
                 </h1>
-                <p className='card-address'><FaMapMarkerAlt style={{ color: 'green' }} />{listing.address}</p>
+                {/* <p className='card-address'><FaMapMarkerAlt style={{ color: 'green' }} />{listing.address}</p> */}
                 <div style={{ display: 'flex' }}>
                     <p className='rent-sale-btn'>
                         {listing.type === 'rent' ? "Rent" : "Sell"}
                     </p>
+                   
                 </div>
+                <p style={{ fontSize: '26px', fontWeight: 'bold' }}>Category : <span style={{ fontWeight: '500', fontSize: '20px', color: 'gray' }}>{listing.category}</span> </p>
+                <p style={{ fontSize: '26px', fontWeight: 'bold' }}>Year : <span style={{ fontWeight: '500', fontSize: '20px', color: 'gray' }}>{listing.year}</span> </p>
+                <p style={{ fontSize: '26px', fontWeight: 'bold' }}>Kilometer : <span style={{ fontWeight: '500', fontSize: '20px', color: 'gray' }}>{listing.kilometer}</span> </p>
+                <p style={{ fontSize: '26px', fontWeight: 'bold' }}>Color: <span style={{ fontWeight: '500', fontSize: '20px', color: 'gray' }}>{listing.color}</span> </p>
+                <p style={{ fontSize: '26px', fontWeight: 'bold' }}>Fuel : <span style={{ fontWeight: '500', fontSize: '20px', color: 'gray' }}>{listing.fuel}</span> </p>
                 <p style={{ fontSize: '26px', fontWeight: 'bold' }}>
                     Description - <span style={{ fontWeight: '500', fontSize: '20px', color: 'gray' }}>{listing.description}</span>
                 </p>

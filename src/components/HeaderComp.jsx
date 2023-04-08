@@ -32,16 +32,16 @@ export default function HeaderComp() {
     }
 
 
-    //search ===============
-    const [search, setSearch] = useState("");
-    // console.log(search);
-    const navigate = useNavigate();
+    // TODO -> Search ===============
+    // const [search, setSearch] = useState("");
+    // // console.log(search);
+    // const navigate = useNavigate();
 
-    const searchHandel = (e) => {
-        e.preventDefault();
-        navigate(`/search?brand=${search}`)
-        setSearch("")
-    };
+    // const searchHandel = (e) => {
+    //     e.preventDefault();
+    //     navigate(`/search?brand=${search}`)
+    //     setSearch("")
+    // };
     // ===============
     return (
         <Navbar bg="light" expand="lg" className="div-container">
@@ -98,7 +98,7 @@ export default function HeaderComp() {
                             </li>
                         )}
                     </Nav>
-                    <Form
+                    {/*   <Form
                         className="d-flex"
                         style={{ display: "flex", justifyContent: "flexEnd" }}
                         onSubmit={searchHandel}
@@ -119,7 +119,7 @@ export default function HeaderComp() {
                         >
                             Search
                         </Button>
-                    </Form>
+                    </Form> */}
                 </Navbar.Collapse>
             </Container>
         </Navbar>
