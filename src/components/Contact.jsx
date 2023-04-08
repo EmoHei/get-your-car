@@ -45,11 +45,16 @@ export default function Contact({ userRef, listing }) {
                     </div>
                     <a
                         href={`mailto:${carOwner.email}?Subject=${listing.brand}&body=${message}`}
-                    >
+                        style={{
+                            margin: 'auto',
+                            marginTop: '40px'
+                        }}
+                   >
                         <Button
                             type="button"
                             style={{
-                                marginTop: '20px'
+                                margin:'auto',
+                                marginTop: '40px'
                             }}
                         > Send Message</Button>
                     </a>
