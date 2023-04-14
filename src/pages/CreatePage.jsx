@@ -26,7 +26,6 @@ function CreatePage() {
         description: '',
         kilometer: 0,
         images: {},
-
     })
     const {
         type,
@@ -74,7 +73,6 @@ function CreatePage() {
                     [e.target.id]: e.target.value,
                 }));
             }
-
         }
         console.log(e.target.value);
     }

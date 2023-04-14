@@ -1,0 +1,12 @@
+input.input-error{
+   background-color:rgb(245, 241, 241) ;
+   border-color: red; 
+}
+p.error-message{
+   margin: 0px;
+   padding: 0px;
+   color: red;
+}
+button:disabled{
+   opacity: 0.35;
+}
