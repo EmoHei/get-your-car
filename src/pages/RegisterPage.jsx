@@ -211,6 +211,7 @@ import { useFormik } from "formik";
 import { registerSchema } from "../schemas/registerSchema";
 
 export default function SignUp() {
+
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -233,7 +234,8 @@ export default function SignUp() {
     onSubmit,
   });
 
-  async function onSubmit(values, actions) {
+  async function onSubmit( values, actions) {
+ 
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
     try {
@@ -261,6 +263,7 @@ export default function SignUp() {
       toast.error("Something went wrong! Please try again!");
       console.log(error);
     }
+   
   }
   return (
     <section>
@@ -396,11 +399,11 @@ export default function SignUp() {
                   </span>{" "}
                 </span>
               </FloatingLabel>
-              <Button 
-              variant="primary" 
-              type="submit" 
-              className="submit-btn"
-              disabled={isSubmitting}
+              <Button
+                variant="primary"
+                type="submit"
+                className="submit-btn"
+                disabled={isSubmitting}
               >
                 Register
               </Button>

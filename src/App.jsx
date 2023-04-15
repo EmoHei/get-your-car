@@ -16,7 +16,7 @@ import Offers from "./pages/Offers";
 import Category from "./pages/Category";
 import Listing from "./pages/Listing";
 import Edit from "./pages/Edit";
-import Search from "./pages/Search";
+
 function App() {
   return (
     <>
@@ -67,7 +67,7 @@ function App() {
             <Route path="/logout" element={<HomePage></HomePage>} />
           </Route>
 
-          <Route path="/search" element={<Search></Search>} />
+     
 
           <Route
             path="/forgot-password"

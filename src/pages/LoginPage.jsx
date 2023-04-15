@@ -27,19 +27,22 @@ export default function LoginPage() {
     }
     async function onLogin(e) {
         e.preventDefault();
+        if (email.trim() === '') {
+            return toast.error("Please enter a valid email")
+        }
+        if (password.trim() === '') {
+            return toast.error("Please enter a valid password")
+        }
         try {
-            if (email.trim() === '') {
-                return toast.error("Please enter a valid email")
-            }
-            if (password.trim() === '') {
-                return toast.error("Please enter a valid password")
-            }
+           
+           
             const auth = getAuth();
             const userCredential = await signInWithEmailAndPassword(
                 auth,
                 email,
                 password
             );
+        
             if (userCredential.user) {
                 toast.success("Your Login Was Successful");
                 navigate("/");
@@ -55,9 +58,9 @@ export default function LoginPage() {
             <div className="main-container" >
 
                 <div className="image-container"  >
-                    <Card className="text-white" style={{ background: 'gray', border: 'none',width:"50%" }}>
+                    <Card className="text-white" style={{ background: 'gray', border: 'none', width: "50%" }}>
                         <Card.Img className="image-container-image" src={lock} alt="lock"
-                            style={{  padding:"10px"}}/>
+                            style={{ padding: "10px" }} />
                     </Card>
                 </div>
                 <div className="form-container" >
@@ -98,6 +101,7 @@ export default function LoginPage() {
                                     onClick={() => setShowPassword((prevState) => !prevState)}
                                 />)}
                             </div>
+                          
 
                             <div className="forgot-password-container">
                                 <p>Don't have an account? <span><Link style={{ color: 'red', textDecoration: 'none' }} to='/register' >Register</Link></span></p>
@@ -120,8 +124,8 @@ export default function LoginPage() {
 
             </div>
         </section>
-      
-       
-       
+
+
+
     );
 }
